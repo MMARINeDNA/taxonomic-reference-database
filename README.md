@@ -3,7 +3,11 @@ This repo contains the code used by the Module 3 team to build reference databas
 
 ## To use the R code `build_reference_database_sedna.R`:
 
-You will need to edit four lines in the top code chunk, `Load environment`. First, create an empty folder where you want the reference fastas to live, and add the path to the variable `reference_fasta_file_location`. Second, add one or more taxa that you want to search to the variable `organism`. Third, add one or more loci that you want to search to the variable `locus`. Finally, include terms that you want to exclude in the vector `exclude`. Some suggestions are already included here.
+You will need to edit four lines in the top code chunk, `Load environment`. 
+  First, create an empty folder where you want the reference fastas to live, and add the path to the variable `reference_fasta_file_location`. 
+  Second, add one or more taxa that you want to search to the variable `organism`. 
+  Third, add one or more loci that you want to search to the variable `locus`. 
+  Finally, include terms that you want to exclude in the vector `exclude`. Some suggestions are already included here.
 
 ## How it works:
 
