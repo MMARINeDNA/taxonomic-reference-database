@@ -4,16 +4,17 @@ This repo contains the code used by the Module 3 team to build reference databas
 ## To use the R code `build_reference_database_sedna.R`:
 
 You will need to edit four lines in the top code chunk, `Load environment`. 
-  First, create an empty folder where you want the reference fastas to live, and add the path to the variable `reference_fasta_file_location`. 
-  Second, add one or more taxa that you want to search to the variable `organism`. 
-  Third, add one or more loci that you want to search to the variable `locus`. 
-  Finally, include terms that you want to exclude in the vector `exclude`. Some suggestions are already included here.
+
+ * First, create an empty folder where you want the reference fastas to live, and add the path to the variable `reference_fasta_file_location`. 
+ * Second, add one or more taxa that you want to search to the variable `organism`. 
+ * Third, add one or more loci that you want to search to the variable `locus`. 
+ * Finally, include terms that you want to exclude in the vector `exclude`. Some suggestions are already included here.
 
 ## How it works:
 
-The second code chunk iterates over the entries supplied in `organism` and `locus` to generate a separate .fasta file for every organism-locus combination. It interfaces with NCBI Genbank via the entrez database enquiry system, and returns sequences titled with the Genbank accession number, species scientific name, and additional information (e.g. locus).
+Create fasta files: The second code chunk iterates over the entries supplied in `organism` and `locus` to generate a separate .fasta file for every organism-locus combination. It interfaces with NCBI Genbank via the entrez database enquiry system, and returns sequences titled with the Genbank accession number, species scientific name, and additional information (e.g. locus).
 
-The rest of the code chunks pull scientific taxonomy and common name information from ITIS based on species names in the NCBI-supplied title for each sequence and export them as a .csv file corresponding to each .fasta file. It then concatenates the scientific taxonomy and replaces the sequence title line with the concatenated taxonomy in the format needed for taxonomic classification by `dada2` and/or `QIIME2`. 
+Acquire species taxonomy: The rest of the code chunks pull scientific taxonomy and common name information from ITIS based on species names in the NCBI-supplied title for each sequence and export them as a .csv file corresponding to each .fasta file. It then concatenates the scientific taxonomy and replaces the sequence title line with the concatenated taxonomy in the format needed for taxonomic classification by `dada2` and/or `QIIME2`. 
 
 ## IMPORTANT NOTES:
 
@@ -21,4 +22,4 @@ Keep in mind that this code is not completely generalized and may not fit your s
 
 ## To run this on sedna:
 
-Use the bash script included here. 
+Use the bash script included here to submit a job to SLURM on Sedna (or your preferred HPC). Be sure to change the time and memory requests to suit your job, change the job title and name of the log file, and, of course, change the email address where you want updates sent!  
