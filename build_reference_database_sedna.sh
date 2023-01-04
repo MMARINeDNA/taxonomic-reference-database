@@ -12,5 +12,5 @@
 
 module load R
 
-#run dada2 script
+#run script
 Rscript build_reference_database_sedna.R
